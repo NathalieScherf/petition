@@ -236,7 +236,7 @@ app.get("/signers/:city", (req, res) => {
 app.post("/sig/delete", function(req, res) {
     db.deleteSignature(req.session.userId)
         .then(function(results) {
-            //change to .then(function(req,res){})
+            //changed from .then(function(req, res results) {
             req.session.sigId = null;
             res.redirect("/unsigned");
         })
