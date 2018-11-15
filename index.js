@@ -13,13 +13,10 @@ app.engine("handlebars", hb());
 app.set("view engine", "handlebars");
 // do not touch above!
 
-//include bodyparser! req.body is the object it returns!
-// left hand value will be name of input field, righthand side: text form input field
-
 app.use(
     cookieSession({
         secret:
-            process.env.SESSION_SECRET || require("./secrets").sessionSecret, // "I'm always angry." any string also in the encrypted cookie
+            process.env.SESSION_SECRET || require("./secrets").sessionSecret, // any string also in the encrypted cookie
         maxAge: 1000 * 60 * 60 * 24 * 14 //two weeks
     })
 );
