@@ -1,11 +1,6 @@
 // do database stuff in this file
 // create a function for each query, and export the function
 var spicedPg = require("spiced-pg");
-//delete this
-// spicedPg is a function, passed to it a url
-// user: postgres, pw: postgres
-//could also use my username and password
-//stored in secrets.json , not  put it on github.
 var db;
 if (process.env.DATABASE_URL) {
     db = spicedPg(process.env.DATABASE_URL);
