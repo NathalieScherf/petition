@@ -7,6 +7,7 @@ const secrets = require("./secrets");
 //could also use my username and password
 //stored in secrets.json , not  put it on github.
 // add module exports below:
+
 var db = spicedPg(
     process.env.DATABASE_URL ||
         `postgres:${secrets.dbUser}:${secrets.password}@localhost:5432/petition`
