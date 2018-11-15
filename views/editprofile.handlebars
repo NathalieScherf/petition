@@ -1,0 +1,32 @@
+<h1>Edit your information</h1>
+{{# if err}}
+<h3>Something went wrong!</h3>
+{{/if}}
+    <form method="POST">
+{{# each profileContent}}
+          <input type="text" name="first" value="{{first}}">
+          <p>First Name</p>
+          <input type="text" name="last" value="{{last}}">
+            <p>Last Name</p>
+
+             <input type="text" name="email" value="{{email}}">
+             <p>E-Mail</p>
+               <input type="password" name="password">
+               <p>Password</p>
+    <input type="text" name="age" value="{{age}}" >
+     <p>Age </p>
+        <input type="text" name="city" value="{{city}}">
+ <p>City</p>
+            <input type="text" name="url" value="{{url}}">
+             <p>Homepage</p>
+             {{/each}}
+       <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button type="submit" name="button" id="loginB">UPDATE</button>
+</form>
+
+
+<form method ="POST" action= "/user/delete">
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+<button id="loginB"> Delete your account </button >
+</form>

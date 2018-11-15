@@ -1,0 +1,26 @@
+<div class="noForm">
+<h2> Thank you  {{name}} for signing this petition! </h2>
+
+    <p>this is your signature:</p>
+    <img id="imgSig" src="{{sign}}" alt="your signature">
+
+
+<p>
+<a href="/signers">See your fellow signers here</a>
+</p>
+
+<p>
+<a href="/profile/edit">Edit your profile</a>
+</p>
+<p>
+<a href="/logout">Log out</a>
+</p>
+{{# if err}}
+<h3>Something went wrong!</h3>
+{{/if}}
+</div>
+<form method ="POST" action= "/sig/delete">
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+<button id="loginB"> Delete your signature </button >
+</form>

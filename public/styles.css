@@ -1,0 +1,76 @@
+* {
+    /*url("/bee.jpg");honey-bee.jpg*/
+    /*background-color: #f2f4b2;*/
+}
+
+canvas {
+    background-color: white;
+}
+
+h3 {
+    color: red;
+}
+h1 {
+    background-color: white;
+    text-align: center;
+    font-family: "Dancing Script", cursive;
+    /*border-radius: 25px;
+    border: 2px solid #73ad21;*/
+    padding: 5px;
+
+    /*background: rgba(255, 255, 204, 0.5);*/
+}
+body {
+    background-image: url("/honey-bee.jpg");
+    font-family: "Source Serif Pro", serif;
+}
+form {
+    border-radius: 25px;
+    border: 2px solid #73ad21;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+.noForm {
+    border-radius: 25px;
+    border: 2px solid #73ad21;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+p {
+    color: black;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: black;
+}
+.petition {
+    margin: auto;
+
+    width: 50%;
+
+    padding: 10px;
+}
+#loginB {
+    padding: 10px;
+    border: 2px solid green;
+    border-radius: 25px;
+}
+#bee {
+    height: 400px;
+    width: auto;
+    border: 5px solid white;
+}
+#imgSig {
+    background-color: white;
+}
+#grad1 {
+}

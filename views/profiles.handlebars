@@ -1,0 +1,14 @@
+<h1>Please tell us a bit more about yourself </h1>
+{{# if err}}
+<h3>Something went wrong!</h3>
+{{/if}}
+    <form method="POST">
+    <input type="text" name="age" >
+     <p>Age </p>
+        <input type="text" name="city" >
+ <p>City</p>
+            <input type="text" name="url" >
+             <p>Homepage</p>
+       <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button type="submit" name="button" id="loginB">Log in</button>
+</form>

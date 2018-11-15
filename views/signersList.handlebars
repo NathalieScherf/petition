@@ -1,0 +1,15 @@
+<div class="noForm">
+<h2> These are your fellow signers: </h2>
+
+<ul style="list-style-type:none">
+    {{#each list}}
+
+        <p><strong>
+        <a href="{{url}}">{{first}}</a> {{last}} {{age}} <a href="/signers/{{city}}">{{city}}</a> </strong></p>
+    {{/each}}
+</ul>
+
+<p>Log out:
+<a href="/logout">link</a>
+</p>
+</div>
