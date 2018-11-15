@@ -1,19 +1,25 @@
 // do database stuff in this file
 // create a function for each query, and export the function
 var spicedPg = require("spiced-pg");
-const secrets = require("./secrets");
+//delete this
 // spicedPg is a function, passed to it a url
 // user: postgres, pw: postgres
 //could also use my username and password
 //stored in secrets.json , not  put it on github.
-// add module exports below:
-
+var db;
+if (process.env.DATABASE_UR) {
+    db = spicedPg(process.env.DATABASE_URL);
+} else {
+    const secrets = require("./secrets");
+    db = spicedPg(
+        `postgres:${secrets.dbUser}:${secrets.password}@localhost:5432/petition`
+    );
+}
+/*
 var db = spicedPg(
     process.env.DATABASE_URL ||
         `postgres:${secrets.dbUser}:${secrets.password}@localhost:5432/petition`
-);
-// function returns a results object , rows is one of the properties
-// name of columns are the keys in the object, content is
+);*/
 
 exports.registerUser = (first, last, email, hash) => {
     return db

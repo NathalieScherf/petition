@@ -5,7 +5,6 @@ const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
 const csurf = require("csurf");
 
-const secrets = require("./secrets");
 const bcrypt = require("./bcrypt");
 
 // handlebars-express: do not touch:
@@ -16,8 +15,8 @@ app.set("view engine", "handlebars");
 
 app.use(
     cookieSession({
-        secret: process.env.SESSION_SECRET || secrets.sessionSecret,
-        //require("./secrets").sessionSecret, // any string also in the encrypted cookie
+        secret:
+            process.env.SESSION_SECRET || require("./secrets").sessionSecret, // any string also in the encrypted cookie
         maxAge: 1000 * 60 * 60 * 24 * 14 //two weeks
     })
 );
