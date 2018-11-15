@@ -7,7 +7,7 @@ var spicedPg = require("spiced-pg");
 //could also use my username and password
 //stored in secrets.json , not  put it on github.
 var db;
-if (process.env.DATABASE_UR) {
+if (process.env.DATABASE_URL) {
     db = spicedPg(process.env.DATABASE_URL);
 } else {
     const secrets = require("./secrets");
