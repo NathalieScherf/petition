@@ -40,6 +40,19 @@ app.use(function(req, res, next) {
 ///end security
 app.use(express.static("./public"));
 
+//prevent from moving to other pages if not registered/logged in
+app.use(function(req, res, next) {
+    if (
+        !req.session.userId &&
+        req.url !== "/login" &&
+        req.url !== "/register"
+    ) {
+        res.redirect("/register");
+    } else {
+        next();
+    }
+});
+
 app.get("/", (req, res) => {
     res.redirect("/register");
 });
@@ -76,7 +89,6 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-    //check if sig in present., set as cookie
     db.byEmail(req.body.email)
         .then(function(results) {
             return bcrypt
@@ -158,8 +170,7 @@ app.post("/profile/edit", function(req, res) {
         )
     );
     Promise.all(promises)
-        .then(function(results) {
-            console.log(results);
+        .then(function() {
             res.redirect("/profile/edit");
         })
         .catch(function(err) {
@@ -233,6 +244,7 @@ app.get("/signers/:city", (req, res) => {
 app.post("/sig/delete", function(req, res) {
     db.deleteSignature(req.session.userId)
         .then(function(results) {
+            console.log(results);
             req.session.sigId = null;
             res.redirect("/unsigned");
         })
@@ -252,7 +264,7 @@ app.post("/user/delete", function(req, res) {
     if (req.session.sigId != "") {
         promisesToDelete.push(
             db.deleteSignature(req.session.userId).then(function(results) {
-                console.log(results);
+                console.log("from delete: ", results);
                 req.session.sigId = null;
             })
         );

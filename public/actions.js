@@ -9,6 +9,7 @@ var currY;
 var draw;
 
 c.addEventListener("mousedown", function down(e) {
+    ctx.beginPath(); //infogad
     currX = e.offsetX;
     currY = e.offsetY;
     //    return currX, currY;
