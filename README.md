@@ -1,6 +1,6 @@
 # Petition
 
-## A petition for a bees!
+## A petition for more bees!
 
 Sign it with a fancy signature and see your fellow signers who also support this cause!
 
@@ -30,16 +30,16 @@ If you have not yet signed the petition, you will be directed to this page:
 
 ![Selection](/imgsRM/BeeFriendlySign.PNG)
 
-Once the petition in signed, you see your signature, can navigate to other pages, or delete your signature  and sign again. 
+Once the petition in signed, you see your signature and if you do not like it, delete it  and sign again. 
 
 ![Selection](/imgsRM/BeeFriendlySinged.PNG)
 
-Your can  view the other suppoerted of this cause,  also sorted by city. 
-
-![Selection](/imgsRM/BeeFriendlyList.PNG)
-
-You can also edit your page and delete your account.
+From here you can   log out, read more about bee friendly plants (external link), or  nagivate to a page where you can edit your profile and delete your account. 
 
 ![Selection](/imgsRM/BeeFriendlyEdit.PNG)
+
+You can also view your fellow singers, also sorted by city!
+
+![Selection](/imgsRM/BeeFriendlyList.PNG)
 
 
